@@ -1,0 +1,17 @@
+balance = 0
+class Bank_Account:
+    def deposit(money_val):
+        global balance
+        print("You have deposited :", money_val)
+        balance = balance + int(str(money_val))
+        print("Your current balance is :", balance)
+
+    def withdraw(money_val):
+        global balance
+        print("You have withdrawn :", money_val)
+        balance = balance - int(str(money_val))
+        print("Your current balance is :", balance)
+
+    def print_balance():
+        global balance
+        print("Your current balance is :", balance)

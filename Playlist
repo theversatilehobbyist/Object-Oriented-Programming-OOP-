@@ -1,0 +1,34 @@
+import random
+song_list = []
+
+class Playlist:
+    def add_song(title, artist, length):
+        song_tuple = (title, artist, length)
+        global song_list
+        song_list.append(song_tuple)
+        print("Your song has been successfully added into your playlist! Here are the details : Title : ", title, ", Artist : ", artist, ", Length : ", length )
+
+    def shuffle():
+        random.shuffle(song_list)
+        print("Your playlist has been successfully shuffled!")
+
+    def __str__():
+        print("\n")
+        print("Songs in Playlist : ")
+        print("-------------------------------------")
+        global song_list
+        print(song_list)
+
+
+class Song(Playlist):
+    global song_list
+    def __str__():
+        print("\n")
+        print("Songs in Playlist : ")
+        print("-------------------------------------")
+        global song_list
+        print_playlist = ""
+        for song in song_list:
+            print_playlist += str(song) + "\n"
+
+        print(print_playlist)

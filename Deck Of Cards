@@ -1,0 +1,39 @@
+import random
+changeable_suit = ["Heart A", "Heart 2", "Heart 3", "Heart 4", "Heart 5", "Heart 6", "Heart 7", "Heart 8", "Heart 9", "Heart 10", "Heart J", "Heart Q", "Heart K", "Diamond A", "Diamond 2", "Diamond 3", "Diamond 4", "Diamond 5", "Diamond 6", "Diamond 7", "Diamond 8", "Diamond 9", "Diamond 10", "Diamond J", "Diamond Q", "Diamond K", "Club A", "Club 2", "Club 3", "Club 4", "Club 5", "Club 6", "Club 7", "Club 8", "Club 9", "Club 10", "Club J", "Club Q", "Club K", "Spade A", "Spade 2", "Spade 3", "Spade 4", "Spade 5", "Spade 6", "Spade 7", "Spade 8", "Spade 9", "Spade 10", "Spade J", "Spade Q", "Spade K"]
+original_suit = ["Heart A", "Heart 2", "Heart 3", "Heart 4", "Heart 5", "Heart 6", "Heart 7", "Heart 8", "Heart 9",
+                     "Heart 10", "Heart J", "Heart Q", "Heart K", "Diamond A", "Diamond 2", "Diamond 3", "Diamond 4",
+                     "Diamond 5", "Diamond 6", "Diamond 7", "Diamond 8", "Diamond 9", "Diamond 10", "Diamond J",
+                     "Diamond Q",
+                     "Diamond K", "Club A", "Club 2", "Club 3", "Club 4", "Club 5", "Club 6", "Club 7", "Club 8",
+                     "Club 9",
+                     "Club 10", "Club J", "Club Q", "Club K", "Spade A", "Spade 2", "Spade 3", "Spade 4", "Spade 5",
+                     "Spade 6", "Spade 7", "Spade 8", "Spade 9", "Spade 10", "Spade J", "Spade Q", "Spade K"]
+
+class Deck:
+    def deal(chosen_card):
+        if chosen_card in changeable_suit:
+            changeable_suit.remove(chosen_card)
+            print("Dealt card : ", chosen_card)
+        elif chosen_card not in changeable_suit:
+            print("Sorry we can't deal your card because it isn't in your suit. This isn't a proper card. Try to make it more specific like Spade 8 or Heart K")
+
+    def shuffle():
+        random.shuffle(changeable_suit)
+        print("This is your shuffled suit : ", changeable_suit)
+
+    def view():
+        print(changeable_suit)
+
+    def replace(card):
+        if card not in changeable_suit:
+            if card in original_suit:
+                changeable_suit.append(card)
+                print("We have successfully added your card in your suite. Your added card is : ", card)
+            elif card not in original_suit:
+                print("Sorry, we can't append this card even though it isn't in your suite of cards. This isn't a proper card. Try to make it more specific like Spade 8 or Heart K")
+        elif card in changeable_suit:
+            print("This card is in your suit of cards so you can not replace it.")
+
+    def count():
+        count = len(changeable_suit)
+        print("The number of cards in your suit is : ", count)
